@@ -1,4 +1,4 @@
-baseurl = "https://example.org/"
+baseurl = "https://jonnyflix.netlify.com/"
 languageCode = "en-us"
 title = "Jonas' Data Science Blog"
 # Define how many pages appear per site
