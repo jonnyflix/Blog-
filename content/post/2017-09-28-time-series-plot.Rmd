@@ -1,0 +1,54 @@
+---
+title: Time Series Plot
+author: Jonas Weller
+date: '2017-09-28'
+slug: time-series-plot
+categories: []
+tags: []
+---
+
+A Time Series Plot is displays values against time. Time is unfolding along the x-axis. THe y-axis, on the other hand, has some other variable and we can see how it changes over time.  
+
+
+***
+
+Like before, we have to load our databases and switch off error messages first:
+```{r warning=FALSE, message=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+***
+
+This time, we want to illustrate Babe Ruth's homerun totals throughout the years. 
+```{r}
+query<-"SELECT yearID, HR
+FROM Batting
+WHERE playerID='ruthba01'"
+sqldf(query)
+```
+
+***
+
+Storing data in "results":
+```{r}
+query<-"SELECT yearID, HR
+FROM Batting
+WHERE playerID='ruthba01'"
+result<-sqldf(query)
+```
+
+
+***
+
+Visualizing the data on a time series plot:
+```{r}
+ggplot()+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  geom_point(data=result,aes(x=yearID,y=HR))+
+  ggtitle("Ruth's Homerun Totals Through The Years")+
+  xlab("Years")+
+  ylab("Homeruns")
+```
+
