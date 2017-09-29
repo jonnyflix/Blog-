@@ -7,72 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Sat, 10 Oct 2015 13:07:31 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Migrate from Jekyll</title>
-      <link>/post/migrate-from-jekyll/</link>
-      <pubDate>Sat, 10 Oct 2015 13:07:31 +0200</pubDate>
+      <title>Histogram</title>
+      <link>/post/histogram/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/migrate-from-jekyll/</guid>
-      <description>&lt;h2 id=&#34;move-static-content-to-static&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;Jekyll has a rule that any directory not starting with &lt;code&gt;_&lt;/code&gt; will be copied as-is to the &lt;code&gt;_site&lt;/code&gt; output. Hugo keeps all static content under &lt;code&gt;static&lt;/code&gt;. You should therefore move it all there.
-With Jekyll, something that looked like&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>/post/histogram/</guid>
+      <description>A Histogram is a graphical display where the data is grouped into ranges and then plotted as bars.
+Like before, we have to load our databases and switch off error messages first:
+library(Lahman) library(sqldf) library(ggplot2) This time, we want to illustrate the weight distribution of Baseball players. However, we are not going to show the data but storing it directly in “result”. Otherwise, the table would be too long because there are too many weight data entries.</description>
     </item>
     
     <item>
-      <title>Go is for lovers</title>
-      <link>/post/go-is-for-lovers/</link>
-      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
+      <title>Scatterplot</title>
+      <link>/post/scatterplot/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/go-is-for-lovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
+      <guid>/post/scatterplot/</guid>
+      <description>A scatter plot is a set of points plotted on a horizontal and vertical axes. It enables us two compare two sets of data.
+First, we load our libraries and switch off error messages:
+library(Lahman) library(sqldf) library(ggplot2) Then, we identified what we are looking for - career homeruns and strikeouts from players who had more than 400 homeruns:
+query&amp;lt;-&amp;quot;SELECT playerID, sum(HR) AS career_HR,sum(SO) AS career_SO FROM Batting GROUP BY playerID HAVING sum(HR)&amp;gt;=400&amp;quot; sqldf(query) ## playerID career_HR career_SO ## 1 aaronha01 755 1383 ## 2 bagweje01 449 1558 ## 3 bankser01 512 1236 ## 4 beltrad01 445 1584 ## 5 beltrca01 421 1693 ## 6 bondsba01 762 1539 ## 7 cabremi01 446 1516 ## 8 cansejo01 462 1942 ## 9 dawsoan01 438 1509 ## 10 delgaca01 473 1745 ## 11 dunnad01 462 2379 ## 12 evansda01 414 1410 ## 13 foxxji01 534 1311 ## 14 gehrilo01 493 790 ## 15 giambja01 440 1572 ## 16 gonzaju03 434 1273 ## 17 griffke02 630 1779 ## 18 guerrvl01 449 985 ## 19 jacksre01 563 2597 ## 20 jonesan01 434 1748 ## 21 jonesch06 468 1409 ## 22 killeha01 573 1699 ## 23 kingmda01 442 1816 ## 24 konerpa01 439 1391 ## 25 mantlmi01 536 1710 ## 26 matheed01 512 1487 ## 27 mayswi01 660 1526 ## 28 mccovwi01 521 1550 ## 29 mcgrifr01 493 1882 ## 30 mcgwima01 583 1596 ## 31 murraed02 504 1516 ## 32 musiast01 475 696 ## 33 ortizda01 541 1750 ## 34 ottme01 511 896 ## 35 palmera01 569 1348 ## 36 piazzmi01 427 1113 ## 37 pujolal01 591 1053 ## 38 ramirma02 555 1813 ## 39 ripkeca01 431 1305 ## 40 robinfr02 586 1532 ## 41 rodrial01 696 2287 ## 42 ruthba01 714 1330 ## 43 schmimi01 548 1883 ## 44 sheffga01 509 1171 ## 45 snidedu01 407 1237 ## 46 soriaal01 412 1803 ## 47 sosasa01 609 2306 ## 48 stargwi01 475 1936 ## 49 teixema01 409 1441 ## 50 thomafr04 521 1397 ## 51 thomeji01 612 2548 ## 52 willibi01 426 1046 ## 53 willite01 521 709 ## 54 winfida01 465 1686 ## 55 yastrca01 452 1393 Next, we learnt how to save the results as a varible:</description>
     </item>
     
     <item>
-      <title>Hugo is for lovers</title>
-      <link>/post/hugo-is-for-lovers/</link>
-      <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
+      <title>Time Series Plot</title>
+      <link>/post/time-series-plot/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/hugo-is-for-lovers/</guid>
-      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
-
-&lt;p&gt;Goto &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo releases&lt;/a&gt; and download the
-appropriate version for your os and architecture.&lt;/p&gt;
-
-&lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
-
-&lt;p&gt;More complete instructions are available at &lt;a href=&#34;/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Creating a new theme</title>
-      <link>/post/creating-a-new-theme/</link>
-      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
-      
-      <guid>/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <guid>/post/time-series-plot/</guid>
+      <description>A Time Series Plot is displays values against time. Time is unfolding along the x-axis. THe y-axis, on the other hand, has some other variable and we can see how it changes over time.
+Like before, we have to load our databases and switch off error messages first:
+library(Lahman) library(sqldf) library(ggplot2) This time, we want to illustrate Babe Ruth’s homerun totals throughout the years.
+query&amp;lt;-&amp;quot;SELECT yearID, HR FROM Batting WHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot; sqldf(query) ## yearID HR ## 1 1914 0 ## 2 1915 4 ## 3 1916 3 ## 4 1917 2 ## 5 1918 11 ## 6 1919 29 ## 7 1920 54 ## 8 1921 59 ## 9 1922 35 ## 10 1923 41 ## 11 1924 46 ## 12 1925 25 ## 13 1926 47 ## 14 1927 60 ## 15 1928 54 ## 16 1929 46 ## 17 1930 49 ## 18 1931 46 ## 19 1932 41 ## 20 1933 34 ## 21 1934 22 ## 22 1935 6 Storing data in “results”:</description>
     </item>
     
   </channel>

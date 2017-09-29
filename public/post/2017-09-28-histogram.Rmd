@@ -1,0 +1,41 @@
+---
+title: Histogram
+author: Jonas Weller
+date: '2017-09-28'
+slug: histogram
+categories: []
+tags: []
+---
+
+A Histogram is a graphical display where the data is grouped into ranges and then plotted as bars.
+
+***
+
+Like before, we have to load our databases and switch off error messages first:
+```{r warning=FALSE, message=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+***
+
+This time, we want to illustrate the weight distribution of Baseball players. However, we are not going to show the data but storing it directly in "result". Otherwise, the table would be too long because there are too many weight data entries. 
+```{r}
+query<-"SELECT weight
+FROM Master"
+result<-sqldf(query)
+```
+
+***
+
+Visualizing the data in a histogram:
+```{r warning=FALSE, message=FALSE}
+ggplot()+
+  geom_histogram(data=result,aes(x=weight),color="blue",fill="white",bins=50)+
+  ggtitle("Body-Weight Distribution for Baseball Players")
+```
+
+To change the inside color, we used the command "fill" and specified the desired color.
+
+To change the amount of bars, we used the command "bins" and specified the desired number. 

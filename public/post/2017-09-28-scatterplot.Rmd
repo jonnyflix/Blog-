@@ -1,0 +1,59 @@
+---
+title: Scatterplot
+author: Jonas Weller
+date: '2017-09-28'
+slug: scatterplot
+categories: []
+tags: []
+---
+
+A scatter plot is a set of points plotted on a horizontal and vertical axes. It enables us two compare two sets of data.
+
+***
+
+First, we load our libraries and switch off error messages: 
+```{r warning=FALSE, message=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+***
+
+Then, we identified what we are looking for - career homeruns and strikeouts from players who had more than 400 homeruns:
+```{r}
+query<-"SELECT playerID, sum(HR) AS career_HR,sum(SO) AS career_SO
+FROM Batting
+GROUP BY playerID
+HAVING sum(HR)>=400"
+sqldf(query)
+```
+
+***
+
+Next, we learnt how to save the results as a varible:
+```{r}
+query<-"SELECT playerID, sum(HR) AS career_HR,sum(SO) AS career_SO
+FROM Batting
+GROUP BY playerID
+HAVING sum(HR)>=400"
+result<-sqldf(query)
+```
+Now, I can just type "result" in the next step because that is where the results of the query are saved.
+
+***
+
+Lastly, we visualized the data stored in "result":
+```{r}
+ggplot()+
+  geom_point(data=result,aes(x=career_SO,y=career_HR),size=3,color="blue")+
+  ggtitle("Career Strikeouts VS Homeruns for Great Hitters")+
+  xlab("Career Strikeouts")+
+  ylab("Career Homeruns")
+```
+
+
+The aes bracket includes what columne should be on which axis. It also specifies the size and color of the points. 
+
+The ggtitle line specifies the headline, whereas the xlab/ylab lines specify the axes labeling. 
+

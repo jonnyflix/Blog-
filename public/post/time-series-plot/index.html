@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Categories &middot; Jonas&#39; Data Science Blog</title>
+        <title>Jonas&#39; Data Science Blog</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of John Doe.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,13 +39,76 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-    <a class="btn home" href="/" title="Back to home">&laquo; Back to home</a>
-    <h2>Categories:</a>
-    <ul>
-     
-    </ul>
+        <article class="post">
+            <a class="btn home" href="/" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="/post/time-series-plot/" title="Time Series Plot">Time Series Plot</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.09.28">2017.09.28</time>
+
+    
+
+</span>
+</footer>
+
+            <p>A Time Series Plot is displays values against time. Time is unfolding along the x-axis. THe y-axis, on the other hand, has some other variable and we can see how it changes over time.</p>
+<hr />
+<p>Like before, we have to load our databases and switch off error messages first:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<hr />
+<p>This time, we want to illustrate Babe Ruth’s homerun totals throughout the years.</p>
+<pre class="r"><code>query&lt;-&quot;SELECT yearID, HR
+FROM Batting
+WHERE playerID=&#39;ruthba01&#39;&quot;
+sqldf(query)</code></pre>
+<pre><code>##    yearID HR
+## 1    1914  0
+## 2    1915  4
+## 3    1916  3
+## 4    1917  2
+## 5    1918 11
+## 6    1919 29
+## 7    1920 54
+## 8    1921 59
+## 9    1922 35
+## 10   1923 41
+## 11   1924 46
+## 12   1925 25
+## 13   1926 47
+## 14   1927 60
+## 15   1928 54
+## 16   1929 46
+## 17   1930 49
+## 18   1931 46
+## 19   1932 41
+## 20   1933 34
+## 21   1934 22
+## 22   1935  6</code></pre>
+<hr />
+<p>Storing data in “results”:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT yearID, HR
+FROM Batting
+WHERE playerID=&#39;ruthba01&#39;&quot;
+result&lt;-sqldf(query)</code></pre>
+<hr />
+<p>Visualizing the data on a time series plot:</p>
+<pre class="r"><code>ggplot()+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  geom_point(data=result,aes(x=yearID,y=HR))+
+  ggtitle(&quot;Ruth&#39;s Homerun Totals Through The Years&quot;)+
+  xlab(&quot;Years&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-09-28-time-series-plot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+
+             
+
+        </article>
+        
     </main>
     <aside class="author">
   <img class="profile-image" src="/img/Profil.jpg" alt="Jonas Weller" />
@@ -81,6 +144,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         

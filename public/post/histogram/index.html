@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Categories &middot; Jonas&#39; Data Science Blog</title>
+        <title>Jonas&#39; Data Science Blog</title>
         <meta name="author">
         <meta name="description" content="The awesome blog of John Doe.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,13 +39,45 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-    <a class="btn home" href="/" title="Back to home">&laquo; Back to home</a>
-    <h2>Categories:</a>
-    <ul>
-     
-    </ul>
+        <article class="post">
+            <a class="btn home" href="/" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="/post/histogram/" title="Histogram">Histogram</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.09.28">2017.09.28</time>
+
+    
+
+</span>
+</footer>
+
+            <p>A Histogram is a graphical display where the data is grouped into ranges and then plotted as bars.</p>
+<hr />
+<p>Like before, we have to load our databases and switch off error messages first:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<hr />
+<p>This time, we want to illustrate the weight distribution of Baseball players. However, we are not going to show the data but storing it directly in “result”. Otherwise, the table would be too long because there are too many weight data entries.</p>
+<pre class="r"><code>query&lt;-&quot;SELECT weight
+FROM Master&quot;
+result&lt;-sqldf(query)</code></pre>
+<hr />
+<p>Visualizing the data in a histogram:</p>
+<pre class="r"><code>ggplot()+
+  geom_histogram(data=result,aes(x=weight),color=&quot;blue&quot;,fill=&quot;white&quot;,bins=50)+
+  ggtitle(&quot;Body-Weight Distribution for Baseball Players&quot;)</code></pre>
+<p><img src="/post/2017-09-28-histogram_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>To change the inside color, we used the command “fill” and specified the desired color.</p>
+<p>To change the amount of bars, we used the command “bins” and specified the desired number.</p>
+
+             
+
+        </article>
+        
     </main>
     <aside class="author">
   <img class="profile-image" src="/img/Profil.jpg" alt="Jonas Weller" />
@@ -81,6 +113,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         
