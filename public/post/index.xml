@@ -2,22 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Jonas&#39; Data Science Blog</title>
-    <link>/post/</link>
+    <link>https://jonnyflix.netlify.com/post/</link>
     <description>Recent content in Posts on Jonas&#39; Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jonnyflix.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Barplot</title>
+      <link>https://jonnyflix.netlify.com/post/barplot/</link>
+      <pubDate>Thu, 05 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jonnyflix.netlify.com/post/barplot/</guid>
+      <description>A Barplot is a graph drawn using rectangular bars to show how large each value is.
+Like before, we have to load our databases and switch off error messages first:
+library(Lahman) library(sqldf) library(ggplot2) Next, we have to extract the data and store it in “result”:
+query&amp;lt;-&amp;quot;SELECT name,HR FROM Teams WHERE yearID=1980 ORDER BY HR&amp;quot; result&amp;lt;-sqldf(query) We need to set the factor first so that our barplot will be in order from most to fewest homeruns.</description>
+    </item>
+    
+    <item>
       <title>Histogram</title>
-      <link>/post/histogram/</link>
+      <link>https://jonnyflix.netlify.com/post/histogram/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/histogram/</guid>
+      <guid>https://jonnyflix.netlify.com/post/histogram/</guid>
       <description>A Histogram is a graphical display where the data is grouped into ranges and then plotted as bars.
 Like before, we have to load our databases and switch off error messages first:
 library(Lahman) library(sqldf) library(ggplot2) This time, we want to illustrate the weight distribution of Baseball players. However, we are not going to show the data but storing it directly in “result”. Otherwise, the table would be too long because there are too many weight data entries.</description>
@@ -25,10 +37,10 @@ library(Lahman) library(sqldf) library(ggplot2) This time, we want to illustrate
     
     <item>
       <title>Scatterplot</title>
-      <link>/post/scatterplot/</link>
+      <link>https://jonnyflix.netlify.com/post/scatterplot/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/scatterplot/</guid>
+      <guid>https://jonnyflix.netlify.com/post/scatterplot/</guid>
       <description>A scatter plot is a set of points plotted on a horizontal and vertical axes. It enables us two compare two sets of data.
 First, we load our libraries and switch off error messages:
 library(Lahman) library(sqldf) library(ggplot2) Then, we identified what we are looking for - career homeruns and strikeouts from players who had more than 400 homeruns:
@@ -37,10 +49,10 @@ query&amp;lt;-&amp;quot;SELECT playerID, sum(HR) AS career_HR,sum(SO) AS career_
     
     <item>
       <title>Time Series Plot</title>
-      <link>/post/time-series-plot/</link>
+      <link>https://jonnyflix.netlify.com/post/time-series-plot/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/time-series-plot/</guid>
+      <guid>https://jonnyflix.netlify.com/post/time-series-plot/</guid>
       <description>A Time Series Plot is displays values against time. Time is unfolding along the x-axis. THe y-axis, on the other hand, has some other variable and we can see how it changes over time.
 Like before, we have to load our databases and switch off error messages first:
 library(Lahman) library(sqldf) library(ggplot2) This time, we want to illustrate Babe Ruth’s homerun totals throughout the years.

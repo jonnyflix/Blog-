@@ -3,39 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/histogram/</loc>
+    <loc>https://jonnyflix.netlify.com/post/barplot/</loc>
+    <lastmod>2017-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jonnyflix.netlify.com/post/histogram/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/scatterplot/</loc>
+    <loc>https://jonnyflix.netlify.com/post/scatterplot/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/time-series-plot/</loc>
+    <loc>https://jonnyflix.netlify.com/post/time-series-plot/</loc>
     <lastmod>2017-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://jonnyflix.netlify.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+    <loc>https://jonnyflix.netlify.com/</loc>
+    <lastmod>2017-10-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+    <loc>https://jonnyflix.netlify.com/post/</loc>
+    <lastmod>2017-10-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://jonnyflix.netlify.com/tags/</loc>
     <priority>0</priority>
   </url>
   
