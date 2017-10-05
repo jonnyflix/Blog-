@@ -1,0 +1,51 @@
+---
+title: Barplot
+author: Jonas Weller
+date: '2017-10-05'
+slug: barplot
+categories: []
+tags: []
+---
+
+A Barplot is a graph drawn using rectangular bars to show how large each value is. 
+
+***
+
+Like before, we have to load our databases and switch off error messages first:
+```{r warning=FALSE, message=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+***
+
+Next, we have to extract the data and store it in "result":
+```{r}
+query<-"SELECT name,HR
+FROM Teams 
+WHERE yearID=1980
+ORDER BY HR"
+result<-sqldf(query)
+```
+
+***
+
+We need to set the factor first so that our barplot will be in order from most to fewest homeruns. Moreover, we add them together by saving them in themselves:
+```{r}
+result$name<-factor(result$name, levels=result$name)
+```
+
+***
+
+Now, we set everything up to visualize the data in a Barplot:
+```{r}
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat='identity',color='blue',fill='white')+
+  coord_flip()+
+  ylab('homeruns')+
+  xlab('team')+
+  ggtitle('1980 Team Homerun Distribution')
+```
+
+Remember, that we have swtiched the axes with "coord_flip()". That means we also have to switch the axes when we want to name them. 
