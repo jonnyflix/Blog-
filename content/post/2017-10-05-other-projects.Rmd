@@ -1,0 +1,13 @@
+---
+title: Other Projects
+author: Jonas Weller
+date: '2017-10-05'
+slug: other-projects
+categories: []
+tags: []
+---
+This post will contain links to other websites we created in class.
+
+The first one was our SQL-website. You can find mine under this link: https://jonnyflix.github.io/Website/ 
+
+The second link is going to lead you to my first dashboard: https://jonnyflix.github.io/DBoard/ 

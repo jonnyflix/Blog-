@@ -25,6 +25,17 @@ query&amp;lt;-&amp;quot;SELECT name,HR FROM Teams WHERE yearID=1980 ORDER BY HR&
     </item>
     
     <item>
+      <title>Other Projects</title>
+      <link>https://jonnyflix.netlify.com/post/other-projects/</link>
+      <pubDate>Thu, 05 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jonnyflix.netlify.com/post/other-projects/</guid>
+      <description>This post will contain links to other websites we created in class.
+The first one was our SQL-website. You can find mine under this link: https://jonnyflix.github.io/Website/
+The second link is going to lead you to my first dashboard: https://jonnyflix.github.io/DBoard/</description>
+    </item>
+    
+    <item>
       <title>Histogram</title>
       <link>https://jonnyflix.netlify.com/post/histogram/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
