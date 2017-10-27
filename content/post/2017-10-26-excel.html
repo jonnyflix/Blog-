@@ -1,0 +1,44 @@
+---
+title: 'Excel '
+author: Jonas Weller
+date: '2017-10-26'
+slug: excel
+categories: []
+tags: []
+---
+
+
+
+<p>This post contains information about how to create databases in RStudio and save them on your desktop afterwards.</p>
+<p>(Obviously, it is also possible to download databases from Data Science websites like kaggle.com)</p>
+<p>After bringing in our libraries into RStudio:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<p>We can create the Lahman tables in RStudio. For this project, we used the Master as well as the Batting table. To save these tables in cvs-files on your desktop, you build the r-script:</p>
+<pre class="r"><code>write.csv(Master,&#39;master.csv&#39;, row.names = FALSE)</code></pre>
+<p>Furthermore, you have the option to only select parts of the dataset and consequently only save these parts on your desktop. For this project we just wanted the data from the 1980s Phillies:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT *
+FROM Batting
+WHERE teamID=&#39;PHI&#39; and yearID=1980&quot;
+
+result&lt;-sqldf(query)
+write.csv(result,&#39;phils.csv&#39;,row.names = FALSE)</code></pre>
+<p>After successfully storing both datasets on your desktop, you just open one of them (phils). You might have to format the columns so that each value has its own cell. First, mark column A, then click: ~ Data -&gt; Text to Columns -&gt; delimited -&gt; comma -&gt; finish it up ~</p>
+<dl>
+<dt>Next, you open a new tab in the excel file and click:</dt>
+<dd>Data -&gt; From Text ~ and select the other file we created (master). You might have to format this one, too.
+</dd>
+</dl>
+<div class="figure">
+<img src="/img/start.png" title="Beginning" />
+
+</div>
+<p>Lastly, we want to connect both tables and add some data from one into the other. It is similiar like looking something up in a telephone book (Master table).</p>
+<p>We want to add the last name (called nameLast) from the Master table to the phils table.</p>
+<div class="figure">
+<img src="/img/master.png" title="Master" />
+
+</div>
+<p>Yet, we need to add a column in the phils table first. Afterwards, we use the VLOOKUP function to find the last names in the Master table and add it. We are starting by telling excel whose last name we want. Then, we mark the whole Master table because that is where we get the information from. Next, we look for the desired title by marking the complete first row of the Master table. Lastly, we just add 0;False to select only the one desired title and get rid of unnecessary values.</p>
+<p>After putting $ in front of the Master row numbers, so that the rows are not changing when we are dragging the formula down, we get this is the result: <img src="/img/final.png" title="Result" /></p>
+<p>Note, my excel was working with semicolons. That means I had to format my files and create the formula with semicolons. Usually, all the semicolons are commas, though.</p>
