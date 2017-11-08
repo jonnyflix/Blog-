@@ -1,12 +1,14 @@
 ---
 title: Other Projects
 author: Jonas Weller
-date: '2017-10-05'
+date: '2017-10-15'
 slug: other-projects
 categories: []
 tags: []
 ---
 This post will contain links to other websites we created in class.
+
+<!--more-->
 
 The first one was our SQL-website. You can find mine under this link: https://jonnyflix.github.io/Website/ 
 

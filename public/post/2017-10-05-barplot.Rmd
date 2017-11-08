@@ -1,13 +1,15 @@
 ---
 title: Barplot
 author: Jonas Weller
-date: '2017-10-05'
+date: '2017-10-01'
 slug: barplot
 categories: []
 tags: []
 ---
 
 A Barplot is a graph drawn using rectangular bars to show how large each value is. 
+
+<!--more-->
 
 ***
 

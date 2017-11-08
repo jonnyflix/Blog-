@@ -8,6 +8,8 @@ tags: []
 ---
 This post contains information about how to create databases in RStudio and save them on your desktop afterwards.
 
+<!--more-->
+
 (Obviously, it is also possible to download databases from Data Science websites like kaggle.com)
 
 After bringing in our libraries into RStudio:
@@ -22,7 +24,7 @@ To save these tables in cvs-files on your desktop, you build the r-script:
 write.csv(Master,'master.csv', row.names = FALSE)
 ```
 
-Furthermore, you have the option to only select parts of the dataset and consequently only save these parts on your desktop. For this project we just wanted the data from the 1980s Phillies:
+Furthermore, you have the option to only select parts of the dataset and consequently only save these parts on your desktop. For this project we just took the data from the 1980s Phillies. However, we wanted every column available, that is why we selected * :
 ```{r}
 query<-"SELECT *
 FROM Batting

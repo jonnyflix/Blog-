@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jonas&#39; Data Science Blog</title>
-    <link>/tags/</link>
+    <link>https://jonnyflix.netlify.com/tags/</link>
     <description>Recent content in Tags on Jonas&#39; Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jonnyflix.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

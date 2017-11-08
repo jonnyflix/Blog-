@@ -1,13 +1,15 @@
 ---
 title: Scatterplot
 author: Jonas Weller
-date: '2017-09-28'
+date: '2017-09-17'
 slug: scatterplot
 categories: []
 tags: []
 ---
 
 A scatter plot is a set of points plotted on a horizontal and vertical axes. It enables us two compare two sets of data.
+
+<!--more-->
 
 ***
 

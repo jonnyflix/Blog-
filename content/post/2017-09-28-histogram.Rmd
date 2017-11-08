@@ -9,6 +9,8 @@ tags: []
 
 A Histogram is a graphical display where the data is grouped into ranges and then plotted as bars.
 
+<!--more-->
+
 ***
 
 Like before, we have to load our databases and switch off error messages first:
